@@ -1,0 +1,123 @@
+html {
+  font-family: "Nunito", sans-serif;
+  overflow: hidden;
+}
+
+body {
+  background-color: #223;
+  margin: 0;
+  padding: 0;
+}
+
+.date {
+  display: flex;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit,
+.day-digit,
+.selected-month {
+  text-transform: uppercase;
+  height: 70px;
+  overflow: hidden;
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: 200;
+  padding: 18px 50px 12px 50px;
+  background: #548;
+  color: #fff;
+  margin: 0;
+  border-radius: 20px;
+}
+
+.day-wrapper {
+  display: flex;
+}
+.day-wrapper .day .arrow-up,
+.day-wrapper .day .arrow-down {
+  display: block;
+  width: 25px;
+  opacity: 0.5;
+  z-index: 999;
+  cursor: pointer;
+}
+.day-wrapper .day .arrow-up:hover,
+.day-wrapper .day .arrow-down:hover {
+  opacity: 1;
+}
+.day-wrapper .day .arrow-down {
+  transform: rotate(180deg);
+}
+.day-wrapper .day .day-digit p {
+  padding: 10px 0;
+  margin: 0;
+  transition: 0.3s;
+}
+.day-wrapper .day:first-child .arrow-up {
+  margin: 0 5px 10px 50px;
+}
+.day-wrapper .day:first-child .arrow-down {
+  margin: 10px 5px 0 50px;
+}
+.day-wrapper .day:first-child .day-digit {
+  padding-right: 5px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.day-wrapper .day:last-child .arrow-up {
+  margin: 0 50px 10px 5px;
+}
+.day-wrapper .day:last-child .arrow-down {
+  margin: 10px 50px 0 5px;
+}
+.day-wrapper .day:last-child .day-digit {
+  padding-left: 5px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.month-wrapper {
+  margin-left: 40px;
+}
+.month-wrapper .arrow-up,
+.month-wrapper .arrow-down {
+  display: block;
+  width: 25px;
+  opacity: 0.5;
+  z-index: 999;
+  cursor: pointer;
+  margin: 0 auto 10px auto;
+}
+.month-wrapper .arrow-up:hover,
+.month-wrapper .arrow-down:hover {
+  opacity: 1;
+}
+.month-wrapper .arrow-down {
+  display: block;
+  transform: rotate(180deg);
+  margin: 10px auto 0 auto;
+}
+.month-wrapper .selected-month {
+  text-align: center;
+}
+.month-wrapper .selected-month p {
+  padding: 10px 0;
+  margin: 0;
+  transition: 0.3s;
+}
+
+.day-wrapper,
+.month-wrapper {
+  position: relative;
+}
+.submit {
+  font-size: 30px;
+  font-weight: 500;
+  margin-left: 40px;
+  line-height: 70px;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
