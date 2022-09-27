@@ -1,6 +1,7 @@
 html {
   font-family: "Nunito", sans-serif;
   overflow: hidden;
+  font-size: 10px;
 }
 
 body {
@@ -13,31 +14,35 @@ body {
   display: flex;
   margin: auto;
   width: 100vw;
-  height: 100vh;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin-top: 50vh;
+  transform: translate(0, -50%);
   justify-content: center;
   align-items: center;
   transition: 0.3s;
 }
 
 .date-active-timetable {
-  height: 170px;
-  padding-top: 50px;
+  margin-top: 5rem;
+  transform: translate(0, 0);
 }
 
 .submit,
 .day-digit,
 .selected-month {
   text-transform: uppercase;
-  height: 70px;
+  height: 7rem;
   overflow: hidden;
-  font-size: 50px;
-  line-height: 50px;
+  font-size: 5rem;
+  line-height: 5rem;
   font-weight: 200;
-  padding: 18px 50px 12px 50px;
+  padding: 1.8rem 5rem 1.2rem 5rem;
   background: #548;
   color: #fff;
   margin: 0;
-  border-radius: 20px;
+  border-radius: 2rem;
 }
 
 .day-wrapper {
@@ -46,7 +51,7 @@ body {
 .day-wrapper .day .arrow-up,
 .day-wrapper .day .arrow-down {
   display: block;
-  width: 25px;
+  width: 2.5rem;
   opacity: 0.5;
   z-index: 999;
   cursor: pointer;
@@ -59,44 +64,44 @@ body {
   transform: rotate(180deg);
 }
 .day-wrapper .day .day-digit p {
-  padding: 10px 0;
+  padding: 1rem 0;
   margin: 0;
   transition: 0.3s;
 }
 .day-wrapper .day:first-child .arrow-up {
-  margin: 0 5px 10px 50px;
+  margin: 0 0.5rem 1rem 5.5rem;
 }
 .day-wrapper .day:first-child .arrow-down {
-  margin: 10px 5px 0 50px;
+  margin: 1rem 0.5rem 0 5.5rem;
 }
 .day-wrapper .day:first-child .day-digit {
-  padding-right: 5px;
+  padding-right: 0.5rem;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 .day-wrapper .day:last-child .arrow-up {
-  margin: 0 50px 10px 5px;
+  margin: 0 5.5rem 1rem 0.5rem;
 }
 .day-wrapper .day:last-child .arrow-down {
-  margin: 10px 50px 0 5px;
+  margin: 1rem 0.5rem 0 0.5rem;
 }
 .day-wrapper .day:last-child .day-digit {
-  padding-left: 5px;
+  padding-left: 0.5rem;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
 
 .month-wrapper {
-  margin-left: 40px;
+  margin-left: 4rem;
 }
 .month-wrapper .arrow-up,
 .month-wrapper .arrow-down {
   display: block;
-  width: 25px;
+  width: 2.5rem;
   opacity: 0.5;
   z-index: 999;
   cursor: pointer;
-  margin: 0 auto 10px auto;
+  margin: 0 auto 1rem auto;
 }
 .month-wrapper .arrow-up:hover,
 .month-wrapper .arrow-down:hover {
@@ -105,13 +110,13 @@ body {
 .month-wrapper .arrow-down {
   display: block;
   transform: rotate(180deg);
-  margin: 10px auto 0 auto;
+  margin: 1rem auto 0 auto;
 }
 .month-wrapper .selected-month {
   text-align: center;
 }
 .month-wrapper .selected-month p {
-  padding: 10px 0;
+  padding: 1rem 0;
   margin: 0;
   transition: 0.3s;
 }
@@ -124,21 +129,22 @@ body {
 .month-wrapper::after {
   content: " ";
   width: 100%;
-  height: 100px;
-  border-radius: 20px;
+  height: 10rem;
+  border-radius: 2rem;
   display: block;
   position: absolute;
-  box-shadow: inset 0 0 8px 20px #548;
+  box-shadow: inset 0 0 0.8rem 2rem #548;
   z-index: 999;
-  top: 33px;
+  top: 3.3rem;
   left: 0;
 }
 
 .submit {
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: 500;
-  margin-left: 40px;
-  line-height: 70px;
+  margin-left: 4rem;
+  line-height: 7rem;
+  text-align: center;
   cursor: pointer;
 }
 
@@ -149,11 +155,11 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding-top: 50px;
+  padding-top: 5rem;
 }
 .timetable .current-week-day {
   color: #fff;
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: 500;
   text-align: center;
 }
@@ -166,14 +172,78 @@ body {
 }
 .timetable .timetable-column .timetable-row .timetable-element {
   color: #fff;
-  padding: 10px;
+  padding: 1rem;
   text-align: right;
 }
 .timetable .timetable-column .timetable-row .timetable-element.time1, .timetable .timetable-column .timetable-row .timetable-element.time2, .timetable .timetable-column .timetable-row .timetable-element.time3, .timetable .timetable-column .timetable-row .timetable-element.time4 {
-  width: 100px;
+  width: 10rem;
 }
 .timetable .timetable-column .timetable-row .timetable-element.lesson1, .timetable .timetable-column .timetable-row .timetable-element.lesson2, .timetable .timetable-column .timetable-row .timetable-element.lesson3, .timetable .timetable-column .timetable-row .timetable-element.lesson4 {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 1.4285714286vw;
+  }
+  .date {
+    flex-direction: column;
+  }
+  .date > div {
+    margin: 0;
+    margin-bottom: 4rem;
+    width: 50rem;
+  }
+  .date > div:last-child {
+    margin-bottom: 0;
+  }
+  .date > div:first-child {
+    width: auto;
+    margin: 0 auto 4rem auto;
+  }
+  .date .submit {
+    box-sizing: border-box;
+    height: 10rem;
+  }
+  .date .day-wrapper .day .arrow-up,
+.date .day-wrapper .day .arrow-down {
+    width: 4rem;
+  }
+  .date .day-wrapper .day:first-child .arrow-up {
+    margin: 0 1.5rem 1rem 4.5rem;
+  }
+  .date .day-wrapper .day:first-child .arrow-down {
+    margin: 1rem 1.5rem 0 4.5rem;
+  }
+  .date .day-wrapper .day:first-child .day-digit {
+    padding-right: 2rem;
+  }
+  .date .day-wrapper .day:last-child .arrow-up {
+    margin: 0 4.5rem 1rem 1.5rem;
+  }
+  .date .day-wrapper .day:last-child .arrow-down {
+    margin: 1rem 4.5rem 0 1.5rem;
+  }
+  .date .day-wrapper .day:last-child .day-digit {
+    padding-left: 2rem;
+  }
+  .date .month-wrapper .arrow-up,
+.date .month-wrapper .arrow-down {
+    width: 4rem;
+  }
+  .date .day-wrapper::after,
+.date .month-wrapper::after {
+    content: " ";
+    width: 100%;
+    height: 10rem;
+    border-radius: 2rem;
+    display: block;
+    position: absolute;
+    box-shadow: inset 0 0 0.8rem 2rem #548;
+    z-index: 999;
+    top: 4.6rem;
+    left: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
