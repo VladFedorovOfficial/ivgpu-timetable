@@ -56,7 +56,7 @@ $.getJSON("./timetable.json", function (timetable) {
 
 
     function transtator(thisItemId, translateValueNum) {
-        $("#add-num" + thisItemId + " + div p").css("transform", "translateY(" + -translateValueNum[thisItemId - 1] * 70 + "px)");
+        $("#add-num" + thisItemId + " + div p").css("transform", "translateY(" + -translateValueNum[thisItemId - 1] * 7 + "rem)");
     };
 
     function getWeekNum(day, month, year) {
