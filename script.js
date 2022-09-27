@@ -33,12 +33,29 @@ $(".submit").click(() => {
 
     let newDate = new Date("2022-" + (translateValueNum[2] + 1) + "-" + dayCount)
 
-    // alert(getWeekNum(dayCount, translateValueNum[2], 2022))
+    // if (getWeekNum(dayCount, translateValueNum[2], 2022)%2 == 1) {
+    //     alert("Первая неделя. " + weekNames[newDate.getDay()-1] + ".")
+    // }
 
+    $(".date").addClass("date-active-timetable");
     if (getWeekNum(dayCount, translateValueNum[2], 2022)%2 == 1) {
-        alert("Первая неделя. " + weekNames[newDate.getDay()-1] + ".")
+        displayWeek(".first-week")
+    } else {
+        displayWeek(".second-week")
+    }
+    
+    function displayWeek(weekNum) {
+        for (let i = 1; i < 8; i++) {
+            $(".day" + i).css("display", "none")
+        }
+        $(".current-week-day").text(weekNames[newDate.getDay()-1])
+        $(".timetable").css("display", "none")
+        $(weekNum).css("display", "flex")
+        $(".day" + newDate.getDay()).css("display", "flex")
     }
 })
+
+
 
 function transtator(thisItemId, translateValueNum) {
     $("#add-num" + thisItemId + " + div p").css("transform", "translateY(" + -translateValueNum[thisItemId - 1] * 70 + "px)");
