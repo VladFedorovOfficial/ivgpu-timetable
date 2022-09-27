@@ -179,7 +179,7 @@ body {
     }
 
     .timetable-column {
-        display: none;
+        display: flex;
         flex-direction: column;
         .timetable-row { 
             display: flex;
@@ -187,11 +187,11 @@ body {
                 color: #fff;
                 padding: 10px;
                 text-align: right;
-                &.time {
+                &.time1,  &.time2, &.time3, &.time4 {
                     width: 100px;
                 }
 
-                &.lesson {
+                &.lesson1, &.lesson2, &.lesson3, &.lesson4 {
                     width: max-content;
                 }
             }
