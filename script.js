@@ -36,13 +36,16 @@ $.getJSON("./timetable.json", function (timetable) {
         $(".date").addClass("date-active-timetable");
             
         if (getWeekNum(dayCount, translateValueNum[2], 2022) % 2 == 1) {
-            displayWeek(0, newDate.getDay())
+            displayWeek(0, newDate.getDay(), "Первая неделя")
         } else {
-            displayWeek(1, newDate.getDay())
+            displayWeek(1, newDate.getDay(), "Вторая неделя")
         }
 
-        function displayWeek(weekNum, weekDay) {
-            $(".current-week-day").text(timetable.dayOfWeek[weekDay].dayName)
+        $("html").css("overflow", "auto")
+
+        function displayWeek(weekNum, weekDay, weekNumName) {
+            $(".current-week-day").text(
+                timetable.dayOfWeek[weekDay].dayName + " - " + weekNumName)
             $(".timetable").css("display", "flex")
             for (let i = 0; i < 4; i++) {
                 $(".timetable-row>.timetable-element.time" + (i+1)).text(timetable.dayOfWeek[weekDay].lessons[i].time)
