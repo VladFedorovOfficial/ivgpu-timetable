@@ -159,7 +159,7 @@ body {
 }
 .timetable .current-week-day {
   color: #fff;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 500;
   text-align: center;
 }
@@ -169,19 +169,48 @@ body {
 }
 .timetable .timetable-column .timetable-row {
   display: flex;
+  transition: 0.3s;
 }
 .timetable .timetable-column .timetable-row .timetable-element {
   color: #fff;
-  padding: 1rem;
-  text-align: right;
+  padding: 2rem;
+  margin: 1rem;
+  font-size: 2.5rem;
+  font-weight: 200;
+  background-color: rgba(85, 68, 136, 0.2509803922);
+  border-radius: 1rem;
+  height: 3.4rem;
+  transition: 0.3s;
+}
+.timetable .timetable-column .timetable-row .timetable-element.timetable-element-display {
+  height: 6.8rem;
 }
 .timetable .timetable-column .timetable-row .timetable-element.time1, .timetable .timetable-column .timetable-row .timetable-element.time2, .timetable .timetable-column .timetable-row .timetable-element.time3, .timetable .timetable-column .timetable-row .timetable-element.time4 {
-  width: 10rem;
+  width: 14.1rem;
+  text-align: right;
 }
 .timetable .timetable-column .timetable-row .timetable-element.lesson1, .timetable .timetable-column .timetable-row .timetable-element.lesson2, .timetable .timetable-column .timetable-row .timetable-element.lesson3, .timetable .timetable-column .timetable-row .timetable-element.lesson4 {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  flex-grow: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.timetable .timetable-column .timetable-row .timetable-element.lesson1:hover, .timetable .timetable-column .timetable-row .timetable-element.lesson2:hover, .timetable .timetable-column .timetable-row .timetable-element.lesson3:hover, .timetable .timetable-column .timetable-row .timetable-element.lesson4:hover {
+  background-color: rgba(85, 68, 136, 0.5019607843);
+}
+.timetable .timetable-column .timetable-row .timetable-element .lesson-description {
+  opacity: 0.5;
+  transform: scaleY(0);
+  transition: 0.3s;
+  transform-origin: top;
+}
+.timetable .timetable-column .timetable-row .timetable-element .lesson-description.lesson-description-display {
+  transform: scaleY(1);
+  height: auto;
 }
 
 @media screen and (max-width: 1000px) {
@@ -245,5 +274,25 @@ body {
     z-index: 999;
     top: 4.6rem;
     left: 0;
+  }
+  .timetable {
+    padding-top: 2.5rem;
+  }
+  .timetable .current-week-day {
+    font-size: 2rem;
+  }
+  .timetable .timetable-column .timetable-row .timetable-element {
+    color: #fff;
+    padding: 1rem;
+    margin: 0.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.5rem;
+    height: 1.7rem;
+  }
+  .timetable .timetable-column .timetable-row .timetable-element.timetable-element-display {
+    height: 3.4rem;
+  }
+  .timetable .timetable-column .timetable-row .timetable-element.time1, .timetable .timetable-column .timetable-row .timetable-element.time2, .timetable .timetable-column .timetable-row .timetable-element.time3, .timetable .timetable-column .timetable-row .timetable-element.time4 {
+    width: 7.1rem;
   }
 }/*# sourceMappingURL=style.css.map */

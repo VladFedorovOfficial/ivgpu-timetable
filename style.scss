@@ -177,7 +177,7 @@ body {
 
     .current-week-day {
         color: #fff;
-        font-size: 3rem;
+        font-size: 4rem;
         font-weight: 500;
         text-align: center;
     }
@@ -188,17 +188,29 @@ body {
 
         .timetable-row {
             display: flex;
+            transition: .3s;
 
             .timetable-element {
                 color: #fff;
-                padding: 1rem;
-                text-align: right;
+                padding: 2rem;
+                margin: 1rem;
+                font-size: 2.5rem;
+                font-weight: 200;
+                background-color: #55448840;
+                border-radius: 1rem;
+                height: 3.4rem;
+                transition: .3s;
+
+                &.timetable-element-display {
+                    height: 6.8rem;
+                }
 
                 &.time1,
                 &.time2,
                 &.time3,
                 &.time4 {
-                    width: 10rem;
+                    width: 14.1rem;
+                    text-align: right;
                 }
 
                 &.lesson1,
@@ -206,11 +218,39 @@ body {
                 &.lesson3,
                 &.lesson4 {
                     width: max-content;
+                    flex-grow: 1;
+                    text-align: left;
+                    display: flex;
+                    flex-direction: column;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #55448880;
+                    }
+                }
+
+                .lesson-description {
+                    opacity: .5;
+                    transform: scaleY(0);
+                    transition: .3s;
+                    transform-origin: top;
+
+                    &.lesson-description-display {
+                        transform: scaleY(1);
+                        height: auto;
+                    }
                 }
             }
         }
     }
 }
+
+// .btn-edit {
+//     position: fixed;
+//     top: 40px;
+//     left: 40px;
+//     font-size: 2rem;
+// }
 
 @media screen and (max-width: 1000px) {
     html {
@@ -302,6 +342,38 @@ body {
                 top: 4.6rem;
                 left: 0;
             } 
+        }
+    }
+
+    .timetable {
+        padding-top: 2.5rem; //
+    
+        .current-week-day {
+            font-size: 2rem; //
+        }
+    
+        .timetable-column {
+            .timetable-row {
+                .timetable-element {
+                    color: #fff;
+                    padding: 1rem; //
+                    margin: .5rem; //
+                    font-size: 1.25rem; //
+                    border-radius: 0.5rem; //
+                    height: 1.7rem; //
+    
+                    &.timetable-element-display {
+                        height: 3.4rem; //
+                    }
+    
+                    &.time1,
+                    &.time2,
+                    &.time3,
+                    &.time4 {
+                        width: 7.1rem; //
+                    }     
+                }
+            }
         }
     }
 }

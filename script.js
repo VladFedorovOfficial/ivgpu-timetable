@@ -46,14 +46,23 @@ $.getJSON("./timetable.json", function (timetable) {
             $(".timetable").css("display", "flex")
             for (let i = 0; i < 4; i++) {
                 $(".timetable-row>.timetable-element.time" + (i+1)).text(timetable.dayOfWeek[weekDay].lessons[i].time)
-                $(".timetable-row>.timetable-element.lesson" + (i+1)).text(timetable.dayOfWeek[weekDay].lessons[i].lessonName[weekNum])
+                $(".timetable-row>.timetable-element.lesson" + (i+1) + ">.lesson-name").text(timetable.dayOfWeek[weekDay].lessons[i].lessonName[weekNum])
+                $(".timetable-row>.timetable-element.lesson" + (i+1) + ">.lesson-description").text(timetable.dayOfWeek[weekDay].lessons[i].lessonDescription[weekNum])
             }
             
             $(".day" + newDate.getDay()).css("display", "flex")
         }
     })
 
+    $(".timetable-element.lesson").click(function() {
+        $(".timetable-element.lesson").prev(".timetable-element.time").removeClass("timetable-element-display")
+        $(".timetable-element.lesson").children(".lesson-description").removeClass("lesson-description-display")
+        $(".timetable-element.lesson").removeClass("timetable-element-display")
 
+        $(this).prev(".timetable-element.time").addClass("timetable-element-display")
+        $(this).children(".lesson-description").addClass("lesson-description-display")
+        $(this).addClass("timetable-element-display")
+    })
 
     function transtator(thisItemId, translateValueNum) {
         $("#add-num" + thisItemId + " + div p").css("transform", "translateY(" + -translateValueNum[thisItemId - 1] * 7 + "rem)");
